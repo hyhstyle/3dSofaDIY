@@ -1,0 +1,274 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: #444444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+* {
+    touch-action: manipulation;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+/* 重置滚动条样式 webkit*/
+
+::-webkit-scrollbar {
+    width: 14px;
+    height: 14px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    border: 5px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-thumb {
+    min-height: 20px;
+    background-clip: content-box;
+    box-shadow: 0 0 0 5px rgba(0, 0, 0, .2) inset;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+
+
+
+/* #canvasDom {
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+} */
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.options {
+    position: absolute;
+    left:10px;
+    top: 100px;
+    z-index: 2;
+}
+
+.option {
+    background-size: cover;
+    background-position: 50%;
+    background-color: white;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 80px;
+    width: 80x;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.option:hover {
+}
+
+.option.--is-active {
+    border: 3px solid #EC4B17;
+    width: 84px;
+    cursor: default;
+}
+
+.option.--is-active:hover {
+}
+
+.option img {
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+}
+
+.info {
+    padding: 0 1em;
+    display: flex;
+    /* justify-content: flex-end; */
+}
+
+.info p {
+    margin-top: 0;
+}
+
+.tray {
+    width: 100%;
+    height: 72px;
+    position: relative;
+    overflow-x: hidden;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill,100px);
+    grid-gap: 0 1px;
+}
+
+.tray__slide {
+    position: absolute;
+    display: flex;
+    left: 0;
+    /*   transform: translateX(-50%);
+  animation: wheelin 1s 2s ease-in-out forwards; */
+}
+
+
+.tray__swatch {
+    transition: 0.1s ease-in;
+    height: 72px;
+    min-width: 72px;
+    flex: 1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+}
+
+.tray__swatch:nth-child(5n+5) {
+    margin-right: 20px;
+}
+.tray__swatch:hover{
+    transform:translateY(-15px)
+ /* animation: wheelin 1s 2s ease-in-out forwards; */
+
+}
+
+.drag-notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    width: 10em;
+    height: 10em;
+    box-sizing: border-box;
+    font-size: 0.9em;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 5em;
+    background: white;
+    position: absolute;
+}
+
+.drag-notice.start {
+    -webkit-animation: popout 0.25s 3s forwards;
+    animation: popout 0.25s 3s forwards;
+}
+
+@-webkit-keyframes popout {
+    to {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@keyframes popout {
+    to {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+}
+
+@-webkit-keyframes wheelin {
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes wheelin {
+    to {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@media (max-width: 1080px) {
+    .header{
+        display: none;
+      }
+    .content{
+        height: calc(100% - 40px);
+        width: 100%;
+        display: flex;
+      }
+    .options{
+            top: 60px;
+            z-index: 2;
+      }
+    .option{
+        margin-bottom: 5px;
+        padding: 5px;
+        height: 45px;
+        width: 45px;
+        display: flex;
+    }
+    .option.--is-active {
+        border-right: 2px solid red;
+        width: 47px;
+    }
+    .info {
+        display: none;
+        padding: 0 1em 1em 0;
+    }
+    .menuAside{
+        padding: 10px;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+      }
+      .menuAside .title{
+        margin-bottom: 2px;
+        font-size: 14px;
+      }
+      .menuAside .colorList{
+        display: flex; 
+        white-space: nowrap; 
+        overflow-x: auto;
+      }
+      .menuAside .colorList .item{
+        display: inline-block; 
+        flex-shrink: 0;
+        width: 45px;
+        height: 45px;
+        border:4px solid #fff;
+        margin-right: 15px;
+        margin-bottom:5px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px #ddd;
+        cursor: pointer;
+      }
+}
+
+
+
