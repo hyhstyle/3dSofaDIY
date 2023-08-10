@@ -3,6 +3,9 @@
 # 使用Cloud Studio迅捷开发一个3D家具个性化定制应用
 本项目使用Cloud Studio开发了一个3D家具个性化定制应用，包含以下功能：三维场景创建，沙发模型导入，沙发模型3D展示，场景中光影效果构建， 沙发零部件实现切换材质颜色，视角切换动画等等。
 消费升级时代，个性化定制商品成为大趋势，运用3D技术、可视化定制技术、VR/AR技术，为企业提供“互联网+个性化定制服务”的软件系统，可以帮助企业快速开展线上3D可视化定制业务。
+![Image text](https://img-blog.csdnimg.cn/ddd5643a09b949fc951c8d5a68079fbb.png)
+![Image text](https://img-blog.csdnimg.cn/cad9c9ca07ae4862997e1e8456350129.png)
+
 ![Alt text](image.png)
 ![Alt text](image-1.png)
 
